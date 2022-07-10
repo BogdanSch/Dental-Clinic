@@ -1,0 +1,48 @@
+$acсent: #4A91F2;
+$acсent-lite: #ADD6FF;
+$title-color: #494E55;
+$text-color: #7A7E85;
+$gradient: linear-gradient(59.45deg, #F0F0F0 0%, #FFFEFF 20.25%, #EEEEEE 99.71%);
+$gradient-medium: linear-gradient(59.45deg, #E7E7E7 0%, #F9F9F9 20.25%, #E7E7E7 99.71%);
+$gradient-lite: linear-gradient(59.45deg, #F8F8F8 0%, #FFFEFF 20.25%, #F5F5F5 99.71%);
+$bg: #F8F6F4;
+$background: #F0E5D3;
+$lite-line-color: #F3F3F3;
+$line-color: #EAEAEA;
+$dark-grey: #DFDDE0;
+$gold: #D9BFA6;
+$shadow: 0px 0px 35px 0px #D8D8D84D;
+$shadow-hover: 0px 0px 50px 0px #D8D8D8B2;
+$shadow-lite: 0px 0px 20px 0px #D8D8D826;
+$shadow-medium: 0px 0px 50px 0px #D8D8D880;
+$shadow-hard: 0px 0px 60px 0px #C1C1C1B2;
+$border: 1px solid $lite-line-color;
+
+$breakpoints: (
+    xs: 0,
+    sm: 575px,
+    md: 768px,
+    lg: 1025px,
+    xl: 1200px,
+    xxl: 1440px,
+    xxxl: 1920px
+);
+
+@mixin flex-row () {
+    display: flex;
+    flex-direction: row;
+}
+// @include flex-row ();
+
+@mixin flex-column () {
+    display: flex;
+    flex-direction: column;
+}
+// @include flex-column ();
+
+@mixin pseudo (){
+    content: '';
+    position: absolute;
+    display: block;
+}
+// @include pseudo ();
