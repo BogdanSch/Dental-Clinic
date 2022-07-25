@@ -100,14 +100,15 @@ $border: 1px solid $lite-line-color;
     outline: none;
 }
 .container{
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
 body{
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
-    min-width: 1380px;
+    min-width: 1400px;
+    height: 100%;
 }
 .btn{
     padding: 20px 52px;
@@ -124,6 +125,9 @@ body{
             margin-right: 12px;
         }
     }
+    &:hover{
+        cursor: pointer;
+    }
 }
 .btn--more{
     font-size: 16px;
@@ -133,6 +137,20 @@ body{
     &:after{
         content: url('../img/icons/icon-arrow-right.png');
         margin-left: 16px;
+    }
+}
+h1{
+    color: $acсent;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-top: 0;
+    & span{
+        color: $title-color;
+        font-size: 40px;
+        font-weight: 500;
+        display: block;
+        line-height: 100%;
     }
 }
 h2{
@@ -172,6 +190,14 @@ h4{
     color: $acсent;
     margin: 0 auto;
 }
+h5{
+    font-size: 24px;
+    font-weight: 600;
+    color: $title-color;
+}
+.description span{
+    color: $acсent;
+}
 .title--dots{
     font-size: 16px;
     font-weight: 600;
@@ -192,7 +218,8 @@ p, a, li, span{
     font-size: 16px;
 }
 p{
-    margin-top: 14px;;
+    margin-top: 14px;
+    color: $text-color;
 }
 .card{
     background: $gradient-lite;
@@ -329,7 +356,6 @@ p{
 }
 // HEADER - end
 
-
 // SOC-ICONS - start
 .soc-icon{
     fill: $text-color;
@@ -384,7 +410,6 @@ p{
 
 // HERO - start
 .hero {
-    // padding-top: 100px;
     background: $gradient-lite;
     &__wrap{
         @include flex-row ();
@@ -395,8 +420,13 @@ p{
     }
     &__content{
         max-width: 550px;
+        position: relative;
         & p{
             margin-bottom: 52px;
+        }
+        & .btn{
+            position: relative;
+            z-index: 10;
         }
     }
     &__img{
@@ -409,20 +439,6 @@ p{
             width: auto;
             object-fit: cover;
         }
-    }
-}
-h1{
-    color: $acсent;
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 100%;
-    margin-top: 0;
-    & span{
-        color: $title-color;
-        font-size: 40px;
-        font-weight: 500;
-        display: block;
-        line-height: 100%;
     }
 }
 // HERO - end
@@ -474,7 +490,7 @@ h1{
 .services{
     padding: 0 0 250px;
     &__wrap{
-        @include flex-column ();
+        @include flex-column();
         margin: 0 auto;
     }
     & .text{
@@ -544,6 +560,45 @@ h1{
 }
 // SERVICES - end
 
+//Employers - Start
+.employers{
+    &__wrap{
+        @include flex-column();
+    }
+    & .text{
+        color: $text-color;
+        width: 60%;
+        align-self: flex-end;
+        margin: 100px 0 120px;
+    }
+    &__list{
+        @include flex-row();
+        list-style: none;
+        justify-content: space-around;
+    }
+    &__item{
+        max-width: 26%;
+        position: relative;
+    }
+    &__img{
+        width: 100%;
+    }
+    &__card{
+        position: relative;
+        top: -12%;
+        left: 18%;
+        padding: 25px;
+        z-index: 10;
+        &:hover .employers__links{
+            display: block;
+        }
+    }
+    &__links{
+        display: none;
+    }
+}
+//Employers - End
+
 // CHECKED - start
 .checked{
     &__wrap{
@@ -569,6 +624,10 @@ h1{
         text-align: center;
         background: #fff;
         position: relative;
+
+        & p{
+            color: $title-color;
+        }
         &:before{
             content: '';
             width: 80%;
@@ -594,7 +653,6 @@ h1{
 }
 // CHECKED - end
 
-
 // METHOD - start
 .method{
     margin: 120px auto;
@@ -607,7 +665,7 @@ h1{
         overflow: hidden;
     }
     &__text{
-        width: 38%;
+        max-width: 45%;
         padding: 220px 40px 30px 70px;
         & .title--dots{
             margin-bottom: 8px;
@@ -623,7 +681,6 @@ h1{
     &__slider{
         margin: 86px 0 80px;
         position: relative;
-        // overflow: hidden;
         &:before{
             content: '';
             width: 140%;
@@ -665,13 +722,14 @@ h1{
         margin-top: 5%;
         list-style: none;
         position: relative;
+        justify-content: space-between;
 
         &::after{
             content: '';
             position: absolute;
             display: block;
             background-color: $bg;
-            width: 115%;
+            width: 120%;
             height: 100%;
             z-index: -1;
             left: -10%;
@@ -681,7 +739,6 @@ h1{
     &__item{
         background-color: $lite-line-color;
         padding: 15px 20px;
-        margin-left: 5%;
         width: 30%;
 
         & h5{
